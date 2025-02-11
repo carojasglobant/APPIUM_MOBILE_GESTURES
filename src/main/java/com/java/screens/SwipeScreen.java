@@ -1,6 +1,5 @@
 package com.java.screens;
 
-import static com.java.utils.ActionGestures.swipeDown;
 import static com.java.utils.WaitActions.isTheElementVisible;
 
 import com.java.base.BaseScreen;

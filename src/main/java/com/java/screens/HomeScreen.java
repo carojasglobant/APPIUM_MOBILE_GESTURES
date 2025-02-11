@@ -14,6 +14,8 @@ public class HomeScreen extends BaseScreen {
 
   AppiumBy btnSwipe = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Swipe\")");
 
+  AppiumBy btnDrag = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Drag\")");
+
   public HomeScreen(AndroidDriver driver) {
     super(driver);
   }
@@ -26,5 +28,10 @@ public class HomeScreen extends BaseScreen {
   public SwipeScreen clickOnSwipeButton() {
     click(getMobileDriver().findElement(btnSwipe), "Tap on swipe button");
     return new SwipeScreen(getMobileDriver());
+  }
+
+  public DragScreen clickOnDragScreen() {
+    click(getMobileDriver().findElement(btnDrag), "Tap on swipe button");
+    return new DragScreen(getMobileDriver());
   }
 }
