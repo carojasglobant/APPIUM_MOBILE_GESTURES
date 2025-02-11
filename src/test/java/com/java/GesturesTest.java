@@ -1,6 +1,7 @@
 package com.java;
 
 import com.java.base.BaseTest;
+import com.java.screens.CongratulationsScreen;
 import com.java.screens.DragScreen;
 import com.java.screens.HomeScreen;
 import com.java.screens.SwipeScreen;
@@ -32,10 +33,11 @@ public class GesturesTest extends BaseTest {
     swipeScreen.swipeDownWithSpecificDriverGesturesUntilTheRobotIsVisible();
   }
 
-  @Test(description = "Navigate to the Drag screen and complete this puzzle")
+  @Test(description = "Navigate to the Drag screen and complete the puzzle")
   public void test4() {
     HomeScreen homeScreen = new HomeScreen(driver);
     DragScreen dragScreen = homeScreen.clickOnDragScreen();
-    dragScreen.completePuzzle();
+    CongratulationsScreen congratulationsScreen = dragScreen.completePuzzle();
+    congratulationsScreen.validateLabelCongratulations();
   }
 }

@@ -50,12 +50,12 @@ public class ActionGestures {
           centerElementX,
           centerElementY))
       .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
-      .addAction(new Pause(finger, Duration.ofMillis(3000)))
+      .addAction(new Pause(finger, Duration.ofMillis(100)))
       .addAction(
         finger.createPointerMove(Duration.ofMillis(700), PointerInput.Origin.viewport(),
           centerPositionX,
           centerPositionY))
-      .addAction(new Pause(finger, Duration.ofMillis(3000)))
+      .addAction(new Pause(finger, Duration.ofMillis(100)))
       .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
     getDriver().perform(List.of(sequence));
   }
