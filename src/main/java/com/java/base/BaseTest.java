@@ -22,7 +22,7 @@ public class BaseTest {
       URL url = new URL("http://127.0.0.1:4723");
 
       AndroidDriver androidDriver = new AndroidDriver(url, getAndroidCapabilities());
-      androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+      androidDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
       return androidDriver;
     } catch (MalformedURLException e) {
       throw new RuntimeException(e);

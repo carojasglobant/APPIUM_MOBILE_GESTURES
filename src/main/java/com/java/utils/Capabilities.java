@@ -9,6 +9,7 @@ public class Capabilities {
       .setApp("/Users/ca.rojas/Downloads/android.wdio.native.app.v1.0.8.apk")
       .setDeviceName("wasa 14")
       .setPlatformName("Android")
-      .setPlatformVersion("14");
+      .setPlatformVersion("14")
+      .setFullReset(true);
   }
 }

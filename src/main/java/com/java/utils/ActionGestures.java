@@ -2,6 +2,7 @@ package com.java.utils;
 
 import static com.java.base.BaseTest.getDriver;
 
+import io.qameta.allure.Step;
 import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ public class ActionGestures {
   /**
    * Swiping the screen vertically by percentage
    */
+  @Step("Swipe down")
   public static void swipeDown() {
     int width = getDriver().manage().window().getSize().getWidth();
     int height = getDriver().manage().window().getSize().getHeight();
@@ -36,6 +38,7 @@ public class ActionGestures {
     getDriver().perform(List.of(sequence));
   }
 
+  @Step("Drag {0} and drop into {1}")
   public static void dragAndDrop(WebElement element, WebElement position) {
     int centerElementX = (element.getSize().width / 2) + element.getRect().getX();
     int centerElementY = (element.getSize().height / 2) + element.getRect().getY();
@@ -58,5 +61,21 @@ public class ActionGestures {
       .addAction(new Pause(finger, Duration.ofMillis(100)))
       .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
     getDriver().perform(List.of(sequence));
+  }
+
+  public static void longClickGesture(WebElement element, int xOffset, int yOffset,
+                                      int durationSeconds) {
+
+    PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+    Sequence sequence = new Sequence(finger, 0)
+      .addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),
+        element.getRect().getX() + xOffset, element.getRect().getY() + yOffset))
+      .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+      .addAction(new Pause(finger, Duration.ofSeconds(durationSeconds)))
+      .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+    getDriver().perform(List.of(sequence));
+
   }
 }

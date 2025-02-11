@@ -4,6 +4,7 @@ import com.java.base.BaseTest;
 import com.java.screens.CongratulationsScreen;
 import com.java.screens.DragScreen;
 import com.java.screens.HomeScreen;
+import com.java.screens.LogInScreen;
 import com.java.screens.SwipeScreen;
 import com.java.screens.WebViewScreen;
 import org.testng.annotations.Test;
@@ -36,8 +37,15 @@ public class GesturesTest extends BaseTest {
   @Test(description = "Navigate to the Drag screen and complete the puzzle")
   public void test4() {
     HomeScreen homeScreen = new HomeScreen(driver);
-    DragScreen dragScreen = homeScreen.clickOnDragScreen();
+    DragScreen dragScreen = homeScreen.clickOnDragButton();
     CongratulationsScreen congratulationsScreen = dragScreen.completePuzzle();
     congratulationsScreen.validateLabelCongratulations();
+  }
+
+  @Test(description = "Navigate to the log in screen and long press the login button")
+  public void test5() {
+    HomeScreen homeScreen = new HomeScreen(driver);
+    LogInScreen logInScreen = homeScreen.clickOnLogInButton();
+    logInScreen.longClickLogInButton();
   }
 }

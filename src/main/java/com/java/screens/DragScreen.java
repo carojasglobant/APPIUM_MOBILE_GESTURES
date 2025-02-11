@@ -1,11 +1,11 @@
 package com.java.screens;
 
 import static com.java.utils.ActionGestures.dragAndDrop;
-import static com.java.utils.WaitActions.isTheElementVisible;
 
 import com.java.base.BaseScreen;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Step;
 
 public class DragScreen extends BaseScreen {
   AppiumBy dragPiece1 =
@@ -53,11 +53,11 @@ public class DragScreen extends BaseScreen {
   AppiumBy dropPiece9 =
     new AppiumBy.ByAndroidUIAutomator("new UiSelector().description(\"drop-r3\")");
 
-
   protected DragScreen(AndroidDriver driver) {
     super(driver);
   }
 
+  @Step("Complete the puzzle")
   public CongratulationsScreen completePuzzle() {
     dragAndDrop(getMobileDriver().findElement(dragPiece1),
       getMobileDriver().findElement(dropPiece1));
