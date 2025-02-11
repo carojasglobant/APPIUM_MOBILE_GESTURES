@@ -1,0 +1,32 @@
+
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+O
+src/main/java/com/java/App.java,1/7/17aa85c797f55389d1113305f08a99d2b67e7bd8
+[
++src/main/java/com/java/Base/BaseScreen.java,0/c/0cca172211392947c92bc23da2bdc316126794b4
+Y
+)src/main/java/com/java/Base/BaseTest.java,d/e/de795a099c0a96c46b6d603232595d91b078c6e0
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+S
+#src/test/java/com/java/AppTest.java,3/b/3ba3c934a6d379dca26c36831b6a569edbd303c4
+Å
+Q.idea/sonarlint/securityhotspotstore/0/c/0cca172211392947c92bc23da2bdc316126794b4,8/1/81d9e44d266c5c25470c74bc0d151ce7381761e5
+Å
+Q.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,1/0/10a03f31c4dce92cb371e761ce9429428bb6c176
+Å
+Q.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec,2/c/2cabb939da04d3de3a200bf2b575690e1a16316d
+w
+G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b/4/b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+Å
+Q.idea/sonarlint/securityhotspotstore/1/7/17aa85c797f55389d1113305f08a99d2b67e7bd8,4/8/4897884c265f475c768c3800eb81d11b1259094f
+Å
+Q.idea/sonarlint/securityhotspotstore/d/e/de795a099c0a96c46b6d603232595d91b078c6e0,9/6/96cb3d5e667f1f0635459db6e48636b7d3f81ca1
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
