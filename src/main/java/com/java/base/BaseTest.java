@@ -8,7 +8,9 @@ import java.net.URL;
 import java.time.Duration;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
+@Listeners({ com.java.base.Listeners.class })
 public class BaseTest {
 
   protected static AndroidDriver driver;

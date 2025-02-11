@@ -7,6 +7,7 @@ import com.java.screens.HomeScreen;
 import com.java.screens.LogInScreen;
 import com.java.screens.SwipeScreen;
 import com.java.screens.WebViewScreen;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class GesturesTest extends BaseTest {
@@ -47,5 +48,12 @@ public class GesturesTest extends BaseTest {
     HomeScreen homeScreen = new HomeScreen(driver);
     LogInScreen logInScreen = homeScreen.clickOnLogInButton();
     logInScreen.longClickLogInButton();
+  }
+
+  @Test(description = "Generate error and see the attachment in the report")
+  public void test6() {
+    HomeScreen homeScreen = new HomeScreen(driver);
+    LogInScreen logInScreen = homeScreen.clickOnLogInButton();
+    Assert.assertTrue(false);
   }
 }
