@@ -3,6 +3,7 @@ package com.java.utils;
 import static com.java.base.BaseTest.getDriver;
 
 import com.google.common.collect.ImmutableMap;
+import io.appium.java_client.TouchAction;
 
 public class DriverSpecificGestures {
 
