@@ -79,6 +79,7 @@ public class ActionGestures {
 
   }
 
+  @Step("Double Tap on {0}")
   public static void doubleTap(WebElement element) {
 
     int centerElementX = (element.getSize().width / 2) + element.getRect().getX();
@@ -99,5 +100,10 @@ public class ActionGestures {
 
     getDriver().perform(List.of(sequence));
 
+  }
+
+  @Step("Navigate back")
+  public static void navigateBack() {
+    getDriver().navigate().back();
   }
 }

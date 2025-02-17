@@ -52,7 +52,8 @@ public class WaitActions {
     getDriver().manage().timeouts().implicitlyWait(Duration.ZERO);
     FluentWait<AndroidDriver> wait = new FluentWait<>(getDriver())
       .withTimeout(Duration.ofSeconds(maxTime))
-      .pollingEvery(Duration.ofSeconds(every));
+      .pollingEvery(Duration.ofSeconds(every))
+      .ignoring(Exception.class);
     try {
       wait.until(ExpectedConditions.visibilityOf(element));
       return true;
