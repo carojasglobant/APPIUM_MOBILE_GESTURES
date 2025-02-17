@@ -78,4 +78,26 @@ public class ActionGestures {
     getDriver().perform(List.of(sequence));
 
   }
+
+  public static void doubleTap(WebElement element) {
+
+    int centerElementX = (element.getSize().width / 2) + element.getRect().getX();
+    int centerElementY = (element.getSize().height / 2) + element.getRect().getY();
+
+    PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+
+    Sequence sequence = new Sequence(finger, 0)
+      .addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(),
+        centerElementX, centerElementY))
+      .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+      .addAction(new Pause(finger, Duration.ofMillis(100)))
+      .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()))
+      .addAction(new Pause(finger, Duration.ofMillis(100)))
+      .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+      .addAction(new Pause(finger, Duration.ofMillis(100)))
+      .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+    getDriver().perform(List.of(sequence));
+
+  }
 }

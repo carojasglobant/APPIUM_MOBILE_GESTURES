@@ -56,4 +56,11 @@ public class GesturesTest extends BaseTest {
     LogInScreen logInScreen = homeScreen.clickOnLogInButton();
     Assert.assertTrue(false);
   }
+
+  @Test(description = "Navigate to the log in screen and double tap the login button")
+  public void test7() {
+    HomeScreen homeScreen = new HomeScreen(driver);
+    LogInScreen logInScreen = homeScreen.clickOnLogInButton();
+    logInScreen.doubleTapLogInButton();
+  }
 }
