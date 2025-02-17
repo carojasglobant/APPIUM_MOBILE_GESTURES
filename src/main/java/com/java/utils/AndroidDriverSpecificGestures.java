@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableMap;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
-public class DriverSpecificGestures {
+public class AndroidDriverSpecificGestures {
 
   public static void swipeDown() {
     int width = getDriver().manage().window().getSize().getWidth()/2;

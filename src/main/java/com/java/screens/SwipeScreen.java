@@ -4,7 +4,7 @@ import static com.java.utils.WaitActions.isTheElementVisible;
 
 import com.java.base.BaseScreen;
 import com.java.utils.ActionGestures;
-import com.java.utils.DriverSpecificGestures;
+import com.java.utils.AndroidDriverSpecificGestures;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Step;
@@ -48,7 +48,7 @@ public class SwipeScreen extends BaseScreen {
       if (isTheElementVisible(imgWebDriverLogo, 5)) {
         break;
       } else {
-        DriverSpecificGestures.swipeDown();
+        AndroidDriverSpecificGestures.swipeDown();
       }
     }
     Assert

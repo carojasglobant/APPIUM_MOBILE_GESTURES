@@ -2,7 +2,7 @@ package com.java.screens;
 
 import com.java.base.BaseScreen;
 import com.java.utils.ActionGestures;
-import com.java.utils.DriverSpecificGestures;
+import com.java.utils.AndroidDriverSpecificGestures;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Step;
@@ -21,7 +21,7 @@ public class LogInScreen extends BaseScreen {
   @Step("Long Click on Log In button")
   public LogInScreen longClickLogInButton() {
     ActionGestures.longClickGesture(driver.findElement(btnLogIn), 150, 80, 10);
-    DriverSpecificGestures.longClickGesture(driver.findElement(btnSignUp), 100, 20,
+    AndroidDriverSpecificGestures.longClickGesture(driver.findElement(btnSignUp), 100, 20,
       10000);
     return new LogInScreen(driver);
   }
