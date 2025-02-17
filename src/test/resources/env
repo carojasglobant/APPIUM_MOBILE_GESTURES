@@ -1,0 +1,5 @@
+MOBILE.APP.URL=/Users/ca.rojas/Downloads/android.wdio.native.app.v1.0.8.apk
+MOBILE.DEVICE.NAME=wasa 14
+MOBILE.PLATFORM.NAME=Android
+MOBILE.PLATFORM.VERSION=14
+
