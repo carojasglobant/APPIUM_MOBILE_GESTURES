@@ -6,12 +6,16 @@ import io.appium.java_client.android.AndroidDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
 @Listeners({ com.java.base.Listeners.class })
 public class BaseTest {
+
+  Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
   protected static AndroidDriver driver;
 
@@ -33,11 +37,13 @@ public class BaseTest {
 
   @BeforeMethod
   public void setUp() {
+    logger.warn("Starting Driver");
     driver = createAndroidDriver();
   }
 
   @AfterMethod
   public void tearDown() {
-    getDriver().removeApp("com.wdiodemoapp");
+    logger.warn("Closing Driver");
+    getDriver().quit();
   }
 }
