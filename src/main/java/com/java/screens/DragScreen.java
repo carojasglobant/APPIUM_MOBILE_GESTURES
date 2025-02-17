@@ -59,34 +59,34 @@ public class DragScreen extends BaseScreen {
 
   @Step("Complete the puzzle")
   public CongratulationsScreen completePuzzle() {
-    dragAndDrop(getMobileDriver().findElement(dragPiece1),
-      getMobileDriver().findElement(dropPiece1));
+    dragAndDrop(driver.findElement(dragPiece1),
+      driver.findElement(dropPiece1));
 
-    dragAndDrop(getMobileDriver().findElement(dragPiece2),
-      getMobileDriver().findElement(dropPiece2));
+    dragAndDrop(driver.findElement(dragPiece2),
+      driver.findElement(dropPiece2));
 
-    dragAndDrop(getMobileDriver().findElement(dragPiece3),
-      getMobileDriver().findElement(dropPiece3));
+    dragAndDrop(driver.findElement(dragPiece3),
+      driver.findElement(dropPiece3));
 
-    dragAndDrop(getMobileDriver().findElement(dragPiece4),
-      getMobileDriver().findElement(dropPiece4));
+    dragAndDrop(driver.findElement(dragPiece4),
+      driver.findElement(dropPiece4));
 
-    dragAndDrop(getMobileDriver().findElement(dragPiece5),
-      getMobileDriver().findElement(dropPiece5));
+    dragAndDrop(driver.findElement(dragPiece5),
+      driver.findElement(dropPiece5));
 
-    dragAndDrop(getMobileDriver().findElement(dragPiece6),
-      getMobileDriver().findElement(dropPiece6));
+    dragAndDrop(driver.findElement(dragPiece6),
+      driver.findElement(dropPiece6));
 
-    dragAndDrop(getMobileDriver().findElement(dragPiece7),
-      getMobileDriver().findElement(dropPiece7));
+    dragAndDrop(driver.findElement(dragPiece7),
+      driver.findElement(dropPiece7));
 
-    dragAndDrop(getMobileDriver().findElement(dragPiece8),
-      getMobileDriver().findElement(dropPiece8));
+    dragAndDrop(driver.findElement(dragPiece8),
+      driver.findElement(dropPiece8));
 
-    dragAndDrop(getMobileDriver().findElement(dragPiece9),
-      getMobileDriver().findElement(dropPiece9));
+    dragAndDrop(driver.findElement(dragPiece9),
+      driver.findElement(dropPiece9));
 
-    return new CongratulationsScreen(getMobileDriver());
+    return new CongratulationsScreen(driver);
   }
 }
 

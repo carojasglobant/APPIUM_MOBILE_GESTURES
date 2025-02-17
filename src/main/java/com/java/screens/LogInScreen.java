@@ -20,15 +20,15 @@ public class LogInScreen extends BaseScreen {
 
   @Step("Long Click on Log In button")
   public LogInScreen longClickLogInButton() {
-    ActionGestures.longClickGesture(getMobileDriver().findElement(btnLogIn), 150, 80, 10);
-    DriverSpecificGestures.longClickGesture(getMobileDriver().findElement(btnSignUp), 100, 20,
+    ActionGestures.longClickGesture(driver.findElement(btnLogIn), 150, 80, 10);
+    DriverSpecificGestures.longClickGesture(driver.findElement(btnSignUp), 100, 20,
       10000);
-    return new LogInScreen(getMobileDriver());
+    return new LogInScreen(driver);
   }
 
   @Step("Double tap on Log In button")
   public LogInScreen doubleTapLogInButton() {
-    ActionGestures.doubleTap(getMobileDriver().findElement(btnLogIn));
-    return new LogInScreen(getMobileDriver());
+    ActionGestures.doubleTap(driver.findElement(btnLogIn));
+    return new LogInScreen(driver);
   }
 }

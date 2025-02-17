@@ -21,7 +21,7 @@ public class WebViewScreen extends BaseScreen {
   @Step("Validate the Web View screen is displayed")
   public void isTheWebViewScreenDisplayed() {
     Assert.assertTrue(
-      isTheElementVisible(getMobileDriver()
+      isTheElementVisible(driver
         .findElement(lblWebViewText), 20));
   }
 }

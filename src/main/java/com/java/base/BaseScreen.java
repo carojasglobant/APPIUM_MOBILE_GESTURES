@@ -12,19 +12,13 @@ import org.slf4j.LoggerFactory;
 
 public class BaseScreen {
 
-  private AndroidDriver driver;
+  public AndroidDriver driver;
 
   static Logger logger = LoggerFactory.getLogger(BaseScreen.class);
 
   protected BaseScreen(AndroidDriver driver) {
-
-
     this.driver = driver;
     PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-  }
-
-  public AndroidDriver getMobileDriver() {
-    return driver;
   }
 
   @Step("Click on {1}")

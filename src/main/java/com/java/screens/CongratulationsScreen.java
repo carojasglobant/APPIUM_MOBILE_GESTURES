@@ -18,7 +18,7 @@ public class CongratulationsScreen extends BaseScreen {
 
   @Step("Validate the congratulations screen is visible")
   public void validateLabelCongratulations() {
-    WebElement element = getMobileDriver().findElement(lblCongratulations);
+    WebElement element = driver.findElement(lblCongratulations);
     String congratulations = element.getDomAttribute("text");
     Assert.assertEquals(congratulations, "Congratulations");
   }

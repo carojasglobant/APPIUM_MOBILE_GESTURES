@@ -27,25 +27,25 @@ public class HomeScreen extends BaseScreen {
 
   @Step("Click on Web view button")
   public WebViewScreen clickOnWebViewButton() {
-    click(getMobileDriver().findElement(btnWebView), "Tap on webview button");
-    return new WebViewScreen(getMobileDriver());
+    click(driver.findElement(btnWebView), "Tap on webview button");
+    return new WebViewScreen(driver);
   }
 
   @Step("Click on Swipe button")
   public SwipeScreen clickOnSwipeButton() {
-    click(getMobileDriver().findElement(btnSwipe), "Tap on swipe button");
-    return new SwipeScreen(getMobileDriver());
+    click(driver.findElement(btnSwipe), "Tap on swipe button");
+    return new SwipeScreen(driver);
   }
 
   @Step("Click on Drag button")
   public DragScreen clickOnDragButton() {
-    click(getMobileDriver().findElement(btnDrag), "Tap on Drag button");
-    return new DragScreen(getMobileDriver());
+    click(driver.findElement(btnDrag), "Tap on Drag button");
+    return new DragScreen(driver);
   }
 
   @Step("Click on Log In button")
   public LogInScreen clickOnLogInButton() {
     click(btnLogIn, "Tap on Log In button");
-    return new LogInScreen(getMobileDriver());
+    return new LogInScreen(driver);
   }
 }

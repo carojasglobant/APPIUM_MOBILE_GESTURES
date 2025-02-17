@@ -24,7 +24,7 @@ public class SwipeScreen extends BaseScreen {
   @Step("Validate the Swipe Screen is displayed")
   public void isTheSwipeScreenDisplayed() {
     Assert.assertTrue(
-      isTheElementVisible(getMobileDriver()
+      isTheElementVisible(driver
         .findElement(lblSwipeHorizontally), 20));
   }
 
