@@ -3,8 +3,10 @@ package com.java.base;
 import static com.java.utils.WaitActions.isTheElementVisible;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 public class BaseScreen {
 
@@ -12,6 +14,7 @@ public class BaseScreen {
 
   protected BaseScreen(AndroidDriver driver) {
     this.driver = driver;
+    PageFactory.initElements(new AppiumFieldDecorator(driver), this);
   }
 
   public AndroidDriver getMobileDriver() {

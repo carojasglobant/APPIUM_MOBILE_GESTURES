@@ -3,7 +3,9 @@ package com.java.screens;
 import com.java.base.BaseScreen;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.qameta.allure.Step;
+import org.openqa.selenium.WebElement;
 
 public class HomeScreen extends BaseScreen {
 
@@ -15,7 +17,9 @@ public class HomeScreen extends BaseScreen {
 
   AppiumBy btnDrag = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Drag\")");
 
-  AppiumBy btnLogIn = new AppiumBy.ByAndroidUIAutomator("new UiSelector().text(\"Login\")");
+  //PageFactory example
+  @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Login\")")
+  WebElement btnLogIn;
 
   public HomeScreen(AndroidDriver driver) {
     super(driver);
@@ -41,7 +45,7 @@ public class HomeScreen extends BaseScreen {
 
   @Step("Click on Log In button")
   public LogInScreen clickOnLogInButton() {
-    click(getMobileDriver().findElement(btnLogIn), "Tap on Log In button");
+    click(btnLogIn, "Tap on Log In button");
     return new LogInScreen(getMobileDriver());
   }
 }
