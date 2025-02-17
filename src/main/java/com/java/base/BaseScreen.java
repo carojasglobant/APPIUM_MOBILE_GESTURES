@@ -7,12 +7,18 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BaseScreen {
 
   private AndroidDriver driver;
 
+  static Logger logger = LoggerFactory.getLogger(BaseScreen.class);
+
   protected BaseScreen(AndroidDriver driver) {
+
+
     this.driver = driver;
     PageFactory.initElements(new AppiumFieldDecorator(driver), this);
   }
@@ -25,6 +31,6 @@ public class BaseScreen {
   public static void click(WebElement element, String description) {
     isTheElementVisible(element, 5);
     element.click();
-    System.out.println(description);
+    logger.info(description);
   }
 }
