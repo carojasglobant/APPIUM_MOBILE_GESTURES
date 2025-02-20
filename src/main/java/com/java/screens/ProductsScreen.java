@@ -4,6 +4,8 @@ import static com.java.utils.W3CActionGestures.swipe;
 import static com.java.utils.WaitActions.isTheElementVisible;
 
 import com.java.base.BaseScreen;
+import com.java.utils.AndroidDriverSpecificGestures;
+import com.java.utils.Directions;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import java.util.List;
@@ -32,9 +34,17 @@ public class ProductsScreen extends BaseScreen {
       "Validating the product title is visible");
   }
 
-  public void swipeDownAnAmountOfTimes(int times){
+  public void swipeDownWithW3CActions(int times){
     for (int i = 0; i < times; i++) {
       swipe(0.5, 0.9, 0.5, 0.2);
     }
   }
+
+  public void swipeDownWithUiAutomator2Actions(int times){
+    for (int i = 0; i < times; i++) {
+      AndroidDriverSpecificGestures.swipe(lstProducts.get(0), Directions.UP, 1.0);
+    }
+  }
+  
+  
 }

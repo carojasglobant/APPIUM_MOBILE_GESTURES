@@ -9,17 +9,14 @@ import org.openqa.selenium.remote.RemoteWebElement;
 
 public class AndroidDriverSpecificGestures {
 
-  public static void swipeDown() {
+  public static void swipe(WebElement element, Directions direction, Double percent) {
     int width = getDriver().manage().window().getSize().getWidth()/2;
     int height = getDriver().manage().window().getSize().getHeight()/2;
 
     getDriver().executeScript("mobile: swipeGesture", ImmutableMap.of(
-      "left", width/2,
-      "top", height/2,
-      "width", width/2,
-      "height", height/2,
-      "direction", "up",
-      "percent", 0.5
+      "elementId", ((RemoteWebElement) element).getId(),
+      "direction", direction.getDirection(),
+      "percent", percent
     ));
   }
 

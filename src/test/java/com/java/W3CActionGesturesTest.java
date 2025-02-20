@@ -33,7 +33,7 @@ public class W3CActionGesturesTest extends BaseTest {
     welcomeScreen.isTheScreenDisplayed();
     ProductsScreen productsScreen = welcomeScreen.performLogIn("standard_user", "secret_sauce");
     productsScreen.validateTheProductScreenIsVisible();
-    productsScreen.swipeDownAnAmountOfTimes(2);
+    productsScreen.swipeDownWithW3CActions(2);
   }
 
   @Test(testName = "Long Press")
