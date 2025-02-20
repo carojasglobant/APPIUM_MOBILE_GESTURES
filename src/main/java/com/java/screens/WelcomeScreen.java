@@ -1,5 +1,6 @@
 package com.java.screens;
 
+import static com.java.utils.ActionGestures.longClickGesture;
 import static com.java.utils.WaitActions.isTheElementVisible;
 
 import com.java.base.BaseScreen;
@@ -43,5 +44,9 @@ public class WelcomeScreen extends BaseScreen {
     txtPassword.sendKeys(password);
     clickOnLogInButton();
     return new ProductsScreen(driver);
+  }
+
+  public void w3CLongPressLogInButton() {
+    longClickGesture(btnLogIn, 50, 30, 10);
   }
 }

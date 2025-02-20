@@ -16,14 +16,14 @@ public class ActionGestures {
    * Swiping the screen vertically by percentage
    */
   @Step("Swipe down")
-  public static void swipe(int percentageStartX, int percentageStartY, int percentageEndX,
-                           int percentageEndY) {
+  public static void swipe(Double percentageStartX, Double percentageStartY, Double percentageEndX,
+                           Double percentageEndY) {
     int width = getDriver().manage().window().getSize().getWidth();
     int height = getDriver().manage().window().getSize().getHeight();
-    int startPositionX = width * percentageStartX;
-    int endPositionX = width * percentageEndX;
-    int startPositionY = height * percentageStartY;
-    int endPositionY = height * percentageEndY;
+    int startPositionX = (int) (width * percentageStartX);
+    int endPositionX = (int) (width * percentageEndX);
+    int startPositionY = (int) (height * percentageStartY);
+    int endPositionY = (int) (height * percentageEndY);
 
     PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 

@@ -27,4 +27,20 @@ public class W3CActionGesturesTest extends BaseTest {
     productDetailScreen.validateTheProductDetailScreenIsDisplayed();
   }
 
+  @Test(testName = "Swipe Down")
+  public void test03() {
+    WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
+    welcomeScreen.isTheScreenDisplayed();
+    ProductsScreen productsScreen = welcomeScreen.performLogIn("standard_user", "secret_sauce");
+    productsScreen.validateTheProductScreenIsVisible();
+    productsScreen.swipeDownAnAmountOfTimes(2);
+  }
+
+  @Test(testName = "Long Press")
+  public void test04() {
+    WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
+    welcomeScreen.isTheScreenDisplayed();
+    welcomeScreen.w3CLongPressLogInButton();
+  }
+
 }

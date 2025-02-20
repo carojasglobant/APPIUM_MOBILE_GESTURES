@@ -1,5 +1,6 @@
 package com.java.screens;
 
+import static com.java.utils.ActionGestures.swipe;
 import static com.java.utils.WaitActions.isTheElementVisible;
 
 import com.java.base.BaseScreen;
@@ -29,5 +30,11 @@ public class ProductsScreen extends BaseScreen {
   public void validateTheProductScreenIsVisible() {
     Assert.assertTrue(isTheElementVisible(lblProducts, 7),
       "Validating the product title is visible");
+  }
+
+  public void swipeDownAnAmountOfTimes(int times){
+    for (int i = 0; i < times; i++) {
+      swipe(0.5, 0.9, 0.5, 0.2);
+    }
   }
 }
