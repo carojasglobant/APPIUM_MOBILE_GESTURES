@@ -119,16 +119,17 @@ public class ActionGestures {
     getDriver().navigate().back();
   }
 
-  @Step("Drag {0} and drop into {1}")
+  @Step("Zoom In {0}")
   public static void zoomIn(WebElement element, int distance) {
-    int fingerOneStartPositionX = element.getRect().getX();
-    int fingerOneStartPositionY = element.getRect().getY();
-    int fingerOneEndPositionX = (element.getRect().getX() - distance);
-    int fingerOneEndPositionY = (element.getRect().getY() - distance);
-    int fingerTwoStartPositionX = element.getSize().width + element.getRect().getX();
-    int fingerTwoStartPositionY = element.getSize().height + element.getRect().getY();
-    int fingerTwoEndPositionX = element.getSize().width + element.getRect().getX() + distance;
-    int fingerTwoEndPositionY = element.getSize().height + element.getRect().getY() + distance;
+    int fingerOneStartPositionX =
+      (int) (element.getRect().getX() + (element.getRect().getWidth() * 0.4));
+    int fingerOneStartPositionY =
+      (int) (element.getRect().getY() + (element.getRect().getHeight() * 0.5));
+    int fingerOneEndPositionX = (fingerOneStartPositionX - distance);
+    int fingerTwoStartPositionX = (int) (element.getRect().getX() + (element.getRect().getWidth() * 0.6));
+    int fingerTwoStartPositionY = (int) (element.getRect().getY() + (element.getRect().getHeight() * 0.5));
+    int fingerTwoEndPositionX = (fingerOneStartPositionX + distance);
+    int fingerTwoEndPositionY = (int) (element.getRect().getY() + (element.getRect().getHeight() * 0.5));
 
     PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
     PointerInput finger2 = new PointerInput(PointerInput.Kind.TOUCH, "finger2");
@@ -136,7 +137,8 @@ public class ActionGestures {
     Sequence sequence1 = new Sequence(finger1, 0)
       .addAction(finger1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), fingerOneStartPositionX, fingerOneStartPositionY))
       .addAction(finger1.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
-      .addAction(finger1.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), fingerOneEndPositionX, fingerOneEndPositionY))
+      .addAction(finger1.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), fingerOneEndPositionX,
+        fingerOneStartPositionY))
       .addAction(finger1.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
     Sequence sequence2 = new Sequence(finger2, 0)

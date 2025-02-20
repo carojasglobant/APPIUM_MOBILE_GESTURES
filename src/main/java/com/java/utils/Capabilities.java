@@ -16,6 +16,7 @@ public class Capabilities {
       .setDeviceName(dotenv.get("MOBILE.DEVICE.NAME"))
       .setPlatformName(dotenv.get("MOBILE.PLATFORM.VERSION"))
       .setPlatformVersion(dotenv.get("MOBILE.FULL.RESET"))
+      .setAppActivity(dotenv.get("MOBILE.APP.ACTIVITY"))
       .setFullReset(true);
   }
 }
