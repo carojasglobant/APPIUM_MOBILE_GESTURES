@@ -1,9 +1,10 @@
 package com.java.screens;
 
-import static com.java.utils.ActionGestures.longClickGesture;
+import static com.java.utils.W3CActionGestures.longClickGesture;
 import static com.java.utils.WaitActions.isTheElementVisible;
 
 import com.java.base.BaseScreen;
+import com.java.utils.AndroidDriverSpecificGestures;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
@@ -48,5 +49,9 @@ public class WelcomeScreen extends BaseScreen {
 
   public void w3CLongPressLogInButton() {
     longClickGesture(btnLogIn, 50, 30, 10);
+  }
+
+  public void uiAutomatorDoubleTap() {
+    AndroidDriverSpecificGestures.doubleTap(btnLogIn, 100, 30);
   }
 }

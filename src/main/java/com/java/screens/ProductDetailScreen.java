@@ -1,6 +1,6 @@
 package com.java.screens;
 
-import static com.java.utils.ActionGestures.zoomIn;
+import static com.java.utils.W3CActionGestures.zoomIn;
 import static com.java.utils.WaitActions.isTheElementVisible;
 
 import com.java.base.BaseScreen;

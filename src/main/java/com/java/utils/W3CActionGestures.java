@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 
-public class ActionGestures {
+public class W3CActionGestures {
 
   /**
    * Swiping the screen vertically by percentage

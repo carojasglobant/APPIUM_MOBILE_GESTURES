@@ -3,6 +3,7 @@ package com.java.utils;
 import static com.java.base.BaseTest.getDriver;
 
 import com.google.common.collect.ImmutableMap;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
@@ -28,6 +29,14 @@ public class AndroidDriverSpecificGestures {
       "x", xOffset,
       "y", yOffset,
       "duration", durationMillis
+    ));
+  }
+
+  public static void doubleTap(WebElement element, int xOffset, int yOffset) {
+    ((JavascriptExecutor) getDriver()).executeScript("mobile: doubleClickGesture", ImmutableMap.of(
+      "elementId", ((RemoteWebElement) element).getId(),
+      "x", xOffset,
+      "y", yOffset
     ));
   }
 }
