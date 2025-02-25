@@ -36,4 +36,17 @@ public class AndroidDriverSpecificGestures {
       "y", yOffset
     ));
   }
+
+  public static void dragAndDrop(WebElement elementToDrag, WebElement elementToBeReached) {
+   int endX =
+     (int) (elementToBeReached.getRect().getX() + elementToBeReached.getRect().getWidth()*0.5);
+    int endY =
+      (int) (elementToBeReached.getRect().getY() + elementToBeReached.getRect().getY()*0.5);
+
+    ((JavascriptExecutor) getDriver()).executeScript("mobile: dragGesture", ImmutableMap.of(
+      "elementId", ((RemoteWebElement) elementToDrag).getId(),
+      "endX", endX,
+      "endY", endY
+    ));
+  }
 }

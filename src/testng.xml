@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Suite">
+
+    <listeners>
+        <listener class-name="com.java.base.Listeners" />
+    </listeners>
+
+    <test name = "Test Exploratorio">
+        <classes>
+            <class name = "com.java.ExplorationTest" />
+        </classes>
+    </test>
+
+    <test name = "Implementacion UiAutomator2 Gestos">
+        <classes>
+            <class name = "com.java.UiAutomator2GesturesTest" />
+        </classes>
+    </test>
+
+    <test name = "Implementacion W3C Gestos">
+        <classes>
+            <class name = "com.java.W3CActionGesturesTest" />
+        </classes>
+    </test>
+
+</suite>

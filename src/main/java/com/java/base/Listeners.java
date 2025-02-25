@@ -11,11 +11,11 @@ public class Listeners implements ITestListener {
 
   @Override
   public void onTestFailure(ITestResult result) {
-    logger.info("FAILED TEST: " + result.getStatus());
+    logger.info("FAILED TEST: " + result.getName());
   }
 
   @Override
   public void onTestSuccess(ITestResult result) {
-    logger.info("SUCCESSFUL: " + result.getStatus());
+    logger.info("SUCCESSFUL: " + result.getTestName());
   }
 }

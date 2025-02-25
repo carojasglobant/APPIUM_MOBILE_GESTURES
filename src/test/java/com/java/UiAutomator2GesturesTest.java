@@ -1,6 +1,7 @@
 package com.java;
 
 import com.java.base.BaseTest;
+import com.java.screens.ProductDetailScreen;
 import com.java.screens.ProductsScreen;
 import com.java.screens.WelcomeScreen;
 import org.testng.annotations.Test;
@@ -29,5 +30,16 @@ public class UiAutomator2GesturesTest extends BaseTest {
     WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
     welcomeScreen.isTheScreenDisplayed();
     welcomeScreen.uiAutomatorLongPress();
+  }
+
+  @Test(testName = "Drag and drop")
+  public void test05() {
+    WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
+    welcomeScreen.isTheScreenDisplayed();
+    ProductsScreen productsScreen = welcomeScreen.performLogIn("standard_user", "secret_sauce");
+    productsScreen.validateTheProductScreenIsVisible();
+    ProductDetailScreen productDetailScreen = productsScreen.tapOnTheFirstProduct();
+    productDetailScreen.uiAutomator2DragAndDrop();
+    productDetailScreen.validateTheProductDetailScreenIsDisplayed();
   }
 }
