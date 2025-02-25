@@ -43,4 +43,14 @@ public class W3CActionGesturesTest extends BaseTest {
     welcomeScreen.w3CLongPressLogInButton();
   }
 
+  @Test(testName = "Drag and drop")
+  public void test05() {
+    WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
+    welcomeScreen.isTheScreenDisplayed();
+    ProductsScreen productsScreen = welcomeScreen.performLogIn("standard_user", "secret_sauce");
+    productsScreen.validateTheProductScreenIsVisible();
+    ProductDetailScreen productDetailScreen = productsScreen.tapOnTheFirstProduct();
+    productDetailScreen.w3CDragAndDrop();
+    productDetailScreen.validateTheProductDetailScreenIsDisplayed();
+  }
 }

@@ -23,4 +23,11 @@ public class UiAutomator2GesturesTest extends BaseTest {
     productsScreen.swipeDownWithUiAutomator2Actions(1);
     productsScreen.validateTheProductScreenIsVisible();
   }
+
+  @Test(testName = "Long press")
+  public void test04() {
+    WelcomeScreen welcomeScreen = new WelcomeScreen(driver);
+    welcomeScreen.isTheScreenDisplayed();
+    welcomeScreen.uiAutomatorLongPress();
+  }
 }

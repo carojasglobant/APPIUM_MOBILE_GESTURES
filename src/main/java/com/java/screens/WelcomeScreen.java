@@ -54,4 +54,6 @@ public class WelcomeScreen extends BaseScreen {
   public void uiAutomatorDoubleTap() {
     AndroidDriverSpecificGestures.doubleTap(btnLogIn, 100, 30);
   }
+
+  public void uiAutomatorLongPress() { AndroidDriverSpecificGestures.longClickGesture(btnLogIn, 50, 50, 10000); }
 }

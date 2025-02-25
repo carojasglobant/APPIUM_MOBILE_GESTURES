@@ -1,5 +1,6 @@
 package com.java.screens;
 
+import static com.java.utils.W3CActionGestures.dragAndDrop;
 import static com.java.utils.W3CActionGestures.zoomIn;
 import static com.java.utils.WaitActions.isTheElementVisible;
 
@@ -13,6 +14,10 @@ public class ProductDetailScreen extends BaseScreen {
 
   @AndroidFindBy(uiAutomator = "description(\"test-Image Container\")")
   WebElement imgProduct;
+
+  @AndroidFindBy(uiAutomator = "descriptionContains(\"test-ADD TO CART\")")
+  WebElement btnAddToCart;
+
   public ProductDetailScreen(AndroidDriver driver) {
     super(driver);
   }
@@ -23,5 +28,9 @@ public class ProductDetailScreen extends BaseScreen {
 
   public void validateTheProductDetailScreenIsDisplayed() {
     Assert.assertTrue(isTheElementVisible(imgProduct, 5));
+  }
+
+  public void w3CDragAndDrop() {
+    dragAndDrop(imgProduct, btnAddToCart);
   }
 }
