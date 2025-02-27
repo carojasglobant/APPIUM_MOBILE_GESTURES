@@ -128,7 +128,7 @@ public class W3CActionGestures {
     int fingerOneEndPositionX = (fingerOneStartPositionX - distance);
     int fingerTwoStartPositionX = (int) (element.getRect().getX() + (element.getRect().getWidth() * 0.6));
     int fingerTwoStartPositionY = (int) (element.getRect().getY() + (element.getRect().getHeight() * 0.5));
-    int fingerTwoEndPositionX = (fingerOneStartPositionX + distance);
+    int fingerTwoEndPositionX = (fingerTwoStartPositionX + distance);
     int fingerTwoEndPositionY = (int) (element.getRect().getY() + (element.getRect().getHeight() * 0.5));
 
     PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
